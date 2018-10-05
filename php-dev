@@ -1,0 +1,15 @@
+#!/bin/sh
+docker run \
+    --rm \
+    -i \
+    --network=host \
+    -v "$HOME":"$HOME": \
+    -v "$PWD":"$PWD":  \
+    -w "$PWD" \
+    php:7-alpine \
+    php "$@"
+
+exit $?
+
+
+# ~/bin/php-vscode 
